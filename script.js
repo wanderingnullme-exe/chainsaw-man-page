@@ -1,4 +1,5 @@
 const video = document.getElementById("bg-video");
+const music = document.getElementById("bg-music");
 const toggle = document.getElementById("sound-toggle");
 
 // Force smooth looping to avoid black screen
@@ -7,16 +8,24 @@ video.addEventListener('ended', () => {
   video.play();
 });
 
-// const hoverSound = document.getElementById("hover-sound");
-// const clickSound = document.getElementById("click-sound");
+// Video should ALWAYS stay muted (autoplay-safe)
+video.muted = true;
 
-let muted = true;
+// Music state
+let musicPlaying = false;
 let uiSound = true;
 
+// Sound toggle now controls MUSIC (not video)
 toggle.onclick = () => {
-  muted = !muted;
-  video.muted = muted;
-  toggle.textContent = muted ? "🔊" : "🔇";
+  if (!musicPlaying) {
+    music.volume = 0.5; // adjust volume (0.0 – 1.0)
+    music.play();
+    toggle.textContent = "🔈";
+  } else {
+    music.pause();
+    toggle.textContent = "🔊";
+  }
+  musicPlaying = !musicPlaying;
 };
 
 const buttons = document.querySelectorAll(".shortcuts a");
