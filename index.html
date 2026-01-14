@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chainsaw Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background video -->
+  <video id="bg-video" autoplay loop muted playsinline preload="auto">
+    <source src="bg.mp4" type="video/mp4">
+  </video>
+
+  <div class="overlay">
+
+    <div id="logo">
+      NULL
+      <img src="waifu.png" class="waifu sit" alt="waifu">
+    </div>
+
+    <!-- Search -->
+    <form class="search-box" action="https://duckduckgo.com/" method="GET">
+      <input type="text" name="q" placeholder="" list="suggestions" autofocus autocomplete="off">
+      <span class="caret"></span>
+      <button type="submit">⌕</button>
+    </form>
+
+    <datalist id="suggestions">
+    </datalist>
+
+    <!-- Shortcuts -->
+    <div class="shortcuts">
+      <a href="https://youtube.com" class="youtube" title="YouTube"><img src="youtube.png" alt="YouTube"></a>
+      <a href="https://github.com" class="github" title="GitHub"><img src="github.png" alt="GitHub"></a>
+      <a href="https://chat.openai.com" class="chatgpt" title="ChatGPT"><img src="chatgpt.png" alt="ChatGPT"></a>
+      <a href="https://mail.google.com" class="gmail" title="Gmail"><img src="gmail.png" alt="Gmail"></a>
+      <a href="https://web.telegram.org" class="telegram" title="Telegram"><img src="telegram.png" alt="Telegram"></a>
+      <a href="https://discord.com/app" class="discord" title="Discord"><img src="discord.png" alt="Discord"></a>
+    </div>
+
+    <!-- Sound toggle -->
+    <button id="sound-toggle">🔊</button>
+
+    <!-- DateTime -->
+    <div id="datetime"></div>
+
+  </div>
+
+  <!-- UI sounds -->
+  <!-- <audio id="hover-sound" src="hover.mp3"></audio>
+  <audio id="click-sound" src="click.mp3"></audio> -->
+
+  <script src="script.js"></script>
+</body>
+</html>
